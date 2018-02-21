@@ -4,12 +4,16 @@ public class LightButton {
 	boolean isOn= false; 
 	
 	public LightButton() {
-		isOn = false; 	
+		isOn = false; 
 	}
 	
 	public boolen get isOn; 
 	
-	public void foggle () 
+	public void toggle () {
+		
+	}
 	
-
+	public void reset () {
+		isOn= false; 
+	}
 }
