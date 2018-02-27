@@ -3,7 +3,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 
 public class LightButton extends JButton {
-	private static int SIZE = 500; 
+	private static int SIZE = 50; 
 	boolean isOn= false; 
 	
 	int row; 

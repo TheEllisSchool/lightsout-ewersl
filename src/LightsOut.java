@@ -19,7 +19,7 @@ import javax.swing.UIManager;
 
 public class LightsOut extends JFrame {
 	
-	private static final int GRIDSIZE = 5; 
+	private static final int GRIDSIZE = 3; 
 	
 	
 	LightButton [] [] lightBoard = new LightButton [GRIDSIZE] [GRIDSIZE]; 
@@ -79,20 +79,22 @@ public class LightsOut extends JFrame {
 		}
 	}
 
-	// public void buttonClicked(int r, int c) {
-		lightBoard [r][c].toggle (); 
-		if check () 
+	public void buttonClicked(int r, int c) {
+	lightBoard [r][c].toggle (); 
+	if (check (r, c)) 
+	
+} 
+
+ public boolean check (r, c) {
+	if (r > -1 && r < GRIDSIZE && c > -1 && c < GRIDSIZE) {
+		check = true; 
 		
-	} 
-	
-	// public boolean check (r, c) {
-		if r > -1 && r < GRIDSIZE  
+		} else {
+			check = false; 
+		}
 	}
-	
-	
-	
-	
-	// Private void promptForNewGame (message); 
+
+	Private void promptForNewGame (message); 
 	String message= "new game"; 
 	
 	public static void main(String[] args) {
