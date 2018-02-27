@@ -1,15 +1,41 @@
+import java.awt.Color;
 
-public class LightButton {
-	private static int SIZE = 100; 
+import javax.swing.JButton;
+
+public class LightButton extends JButton {
+	private static int SIZE = 500; 
 	boolean isOn= false; 
 	
-	public LightButton() {
+	int row; 
+	int col; 
+	
+	public LightButton(int r, int c) {
 		isOn = false; 
+		setBackground (Color.BLUE);
+		row = r;
+		col= c; 
+		
 	}
 	
-	public boolen get isOn; 
+	public int getRow () {
+		return row; 
+	}
+	
+	public int getCol () {
+		return col;
+	}
+	
+	// public boolean get isOn; 
 	
 	public void toggle () {
+		if (isOn == false) {
+			isOn= true; 
+			setBackground (Color.WHITE); 
+		} else {
+			isOn = false; 
+			setBackground(Color.BLUE); 
+		}
+			
 		
 	}
 	

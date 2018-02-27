@@ -19,15 +19,24 @@ import javax.swing.UIManager;
 
 public class LightsOut extends JFrame {
 	
-	private static final int GRIDSIZE = 10; 
-	
-	LightButton [] [] lightBoard = new LightButton [GRIDSIZE] [GRIDSIZE]
-			
+	private static final int GRIDSIZE = 5; 
 	
 	
-	Public lightsOut () {
+	LightButton [] [] lightBoard = new LightButton [GRIDSIZE] [GRIDSIZE]; 
 		
+	public LightsOut () {
+		initGUI ();
+		
+		setTitle ("Lights Out!"); 
+		setSize(500, 500); 
+		setResizable(false); 
+		pack(); 
+		setLocationRelativeTo (null); 
+		
+		setVisible(true); 
+		setDefaultCloseOperation(EXIT_ON_CLOSE); 
 	}
+	
 	
 	private void initGUI() {
 		JPanel titlePanel = new JPanel(); 
@@ -46,29 +55,44 @@ public class LightsOut extends JFrame {
 			add (centerPanel, BorderLayout.CENTER) ; 
 			for (int r=0; r < GRIDSIZE; r++) {
 				for (int c= 0; c < GRIDSIZE; c++) {
-					terrain[r][c] = new LightButton (r, c);
-					terrain[r][c].addActionListener(new ActionListener () {
+					lightBoard[r][c] = new LightButton ( r, c);
+					lightBoard[r][c].addActionListener(new ActionListener () {
 						@Override
 						public void actionPerformed (ActionEvent e) {
 							LightButton button = (LightButton) e.getSource (); 
 							int row = button.getRow (); 
 							int col = button.getCol (); 
-							clickedTerrain (row, col);
+			
+							buttonClicked (row, col);
 						}
 						
 					} ); 
-					centerPanel.add(terrain[r][c]); 
+					centerPanel.add(lightBoard[r][c]); 
 				}
 			}
 		}
+	public void boardSetUp () {
+		for (int r = 0; r < GRIDSIZE; r++) {
+			for (int c= 0; r < GRIDSIZE; r++) {
+				
+			}
+		}
+	}
 
-	public void buttonClicked(int r, int c) {
-	
+	// public void buttonClicked(int r, int c) {
+		lightBoard [r][c].toggle (); 
+		if check () 
+		
 	} 
 	
-	public void boardSetup()
+	// public boolean check (r, c) {
+		if r > -1 && r < GRIDSIZE  
+	}
 	
-	Private void promptForNewGame (message); 
+	
+	
+	
+	// Private void promptForNewGame (message); 
 	String message= "new game"; 
 	
 	public static void main(String[] args) {
@@ -83,4 +107,5 @@ public class LightsOut extends JFrame {
             		new LightsOut();
             }   
         });	
+}
 }
