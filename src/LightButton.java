@@ -25,7 +25,9 @@ public class LightButton extends JButton {
 		return col;
 	}
 	
-	// public boolean get isOn; 
+	public boolean getisOn () {
+		return isOn; 
+	}
 	
 	public void toggle () {
 		if (isOn == false) {
